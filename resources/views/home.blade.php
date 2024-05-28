@@ -35,6 +35,27 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 m-4">
+            @if (isset($products))
+                @foreach ($products as $product)
+                    <div class="col p-4">
+                        <div class="card d-flex align-items-center h-100">
+                            <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}" style="height: 200px; width: fit-content;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->name }}</h5>
+                                <p class="card-text">{{ Str::limit($product->description, 100, '...') }}</p>
+                            </div>
+                            <div class="card-footer text-center text-body-secondary w-100">
+                                <b>{{ $product->value }}</b>
+                                <a href="#" class="btn btn-dark">Add</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0e2cb01f7e.js" crossorigin="anonymous"></script>
 </body>
