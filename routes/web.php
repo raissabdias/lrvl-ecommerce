@@ -21,6 +21,9 @@ Route::match(['GET', 'POST'], '/', [ProductController::class, 'index'])
 Route::match(['GET', 'POST'], '/category', [ProductController::class, 'category'])
     ->name('category');
 
+Route::match(['GET', 'POST'], '/{id}/category', [ProductController::class, 'category'])
+    ->name('category_by_id');
+
 Route::match(['GET', 'POST'], '/register', [ClientController::class, 'register'])
     ->name('register');
     
