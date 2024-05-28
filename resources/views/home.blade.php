@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-secondary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ route('home') }}">
                 <img src="/images/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
                 <span class="nav-title ps-2 pb-1"><strong>LrvlShop</strong></span>
             </a>
@@ -20,13 +20,13 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="{{ route('category') }}">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
