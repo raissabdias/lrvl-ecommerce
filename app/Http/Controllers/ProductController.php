@@ -27,7 +27,7 @@ class ProductController extends Controller
         $categories = Category::all();
 
         # Get all products
-        $products = Product::limit(4);
+        $products = Product::limit(8);
 
         # Filter product by category
         if ($category_id) {
@@ -41,5 +41,26 @@ class ProductController extends Controller
         ];
 
         return view('category', $data);
+    }
+
+    public function addCart($product_id, Request $request)
+    {
+        # Search product by id
+        $product = Product::find($product_id);
+
+        # Add product to cart
+        if ($product) {
+            $cart = session('cart', []);
+            array_push($cart, $product);
+            session(['cart' => $cart]);
+        }
+
+        return redirect()->route('home');
+    }
+
+    public function cart(Request $request)
+    {
+        $cart = session('cart', []);
+        dd($cart);
     }
 }
