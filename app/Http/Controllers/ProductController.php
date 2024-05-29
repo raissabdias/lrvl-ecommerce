@@ -36,7 +36,8 @@ class ProductController extends Controller
 
         $data = [
             'categories' => $categories,
-            'products' => $products->get()
+            'products' => $products->get(),
+            'id' => $category_id
         ];
 
         return view('category', $data);

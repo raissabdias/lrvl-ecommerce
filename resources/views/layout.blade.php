@@ -36,7 +36,7 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-4 m-4">
+        <div class="row m-4">
             @yield('content')
         </div>
     </div>
