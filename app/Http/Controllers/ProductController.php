@@ -19,7 +19,7 @@ class ProductController extends Controller
         return view('home', $data);
     }
 
-    public function category($category_id = null, Request $request) 
+    public function category($category_id = null) 
     {
         $data = [];
 
@@ -61,6 +61,8 @@ class ProductController extends Controller
     public function cart(Request $request)
     {
         $cart = session('cart', []);
-        dd($cart);
+        $data = ['cart' => $cart];
+
+        return view('cart', $data);
     }
 }
