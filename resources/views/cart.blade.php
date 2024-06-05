@@ -12,7 +12,10 @@
                                 <h5>{{ $product->name }}</h5>
                                 <p>{{ Str::limit($product->description, 100, '...') }}</p>
                             </div>
-                            <h3>${{ $product->value }}</h3>
+                            <div class="text-end">
+                                <h3>${{ $product->value }}</h3>
+                                <a href=""><i class="fa-solid fa-trash" style="color: red"></i></a>
+                            </div>
                         </div>
                     </div>
                </div>
