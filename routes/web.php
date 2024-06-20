@@ -29,6 +29,9 @@ Route::match(['GET', 'POST'], '/{product_id}/cart/add', [ProductController::clas
 
 Route::match(['GET', 'POST'], '/cart', [ProductController::class, 'cart'])
     ->name('cart');
+    
+Route::match(['GET', 'POST'], '/{index}/delete-cart', [ProductController::class, 'deleteCart'])
+    ->name('cart_delete');
 
 Route::match(['GET', 'POST'], '/register', [ClientController::class, 'register'])
     ->name('register');

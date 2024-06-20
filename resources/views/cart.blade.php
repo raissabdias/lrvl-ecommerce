@@ -3,7 +3,7 @@
     <div class="col-12">
         <h4 class="text-center mb-3">Shopping Cart</h4>
         @if (isset($cart) && $cart)
-           @foreach ($cart as $product)
+           @foreach ($cart as $k => $product)
                <div class="card mt-4">
                     <div class="card-body">
                         <div class="d-flex">
@@ -14,7 +14,7 @@
                             </div>
                             <div class="text-end">
                                 <h3>${{ $product->value }}</h3>
-                                <a href=""><i class="fa-solid fa-trash" style="color: red"></i></a>
+                                <a href="{{ route('cart_delete', ['index' => $k]) }}"><i class="fa-solid fa-trash" style="color: red"></i></a>
                             </div>
                         </div>
                     </div>
