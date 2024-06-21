@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Address;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -11,5 +13,16 @@ class ClientController extends Controller
         $data = [];
 
         return view('register', $data);
+    }
+
+    public function registerClient(Request $request)
+    {
+        $post = $request->all();
+
+        $user = new User($post);
+        $address = new Address($post);
+        dd($address);
+
+        return redirect()->route('register');
     }
 }
